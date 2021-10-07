@@ -1,0 +1,182 @@
+
+        * { 
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+        #preloader{
+          top: 0px;
+          background: white url('../images/onebuckaidlogo.png') no-repeat center center;
+          background-size: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height:100vh;
+          width:100%;
+          position: fixed;
+          z-index: 100;
+      }
+      #loading{
+          z-index: 105;
+      }
+      #loading_h2{
+         position: absolute;
+         bottom: 5vh;
+      }
+      #loading_footer{
+          position: absolute;
+          bottom: 0vh;
+      }
+      html{
+        height: 100%;
+      }
+        body{
+           
+            margin: 60px 0px;
+            padding: 0px 0px;
+            background-image:url("../images/bg1.jpeg") ;
+            box-sizing: border-box;
+            max-height:100vh;
+            width:100%;
+            overflow: auto;
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            background-size:cover;/* Resize the background image to cover the entire container */
+        }
+        @media only screen and (max-width: 400px){
+          body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+          }
+       }
+        a { text-decoration: none; }
+        .alert{
+          opacity:0.7;
+        }
+        .heading1{
+            font-weight: bold;
+            color: white;
+            font-family: 'Ubuntu', sans-serif;
+            width:fit-content;
+            margin-top: 8vh;
+            margin-left: 10vw;
+            
+        }
+        #welcome{
+          font-size:8vw;
+          margin-bottom: 0px;
+        }
+        #onebuckaid{
+          font-size:7vw;
+          margin-left: 3rem;
+        }
+        .login-form{
+            border:transparent;
+            box-shadow: 5px 5px 50px grey,-5px -5px 50px grey;
+            border-radius: 5px ;
+            width: 20rem;
+            height:20rem;
+            margin-left:13vw;
+            margin-top: 3rem;
+        }
+        @media only screen and (max-width: 400px){
+          .login-form{
+            margin-left: initial;
+          }
+        }
+        
+        .button {
+        position: relative;
+         border: none;
+         border-radius: 13px;
+         color: white;
+         padding: 8px 0px;
+         text-decoration: none;
+         display:block;
+         font-size: 16px;
+         margin: 4px 8px;
+         cursor: pointer;
+         width:18rem;
+         top:1.5rem;
+        }
+
+        .button1 {
+          background-color: blue;
+          color: white;
+           border: 2px solid white;
+           
+        }
+
+
+
+         .button2 {
+           background-color: rgb(228, 42, 42);
+           color: white;
+           border: 2px solid white;
+           }
+          .fa-facebook-f{
+            color:white;
+            font-weight: bold;
+            position: relative;
+            margin-right:1.9rem;
+            font-size: 1.5rem;
+            
+          }
+         .fa-google{
+            color:white;
+            font-weight:normal;
+            position: relative;
+            right:1.5rem;
+            font-size: 1.5rem;
+            
+         }
+         #username ,#submit,#email{
+         border: 2px solid white;
+         border-radius: 13px;
+         color: white;
+         background-color: grey;
+         padding: 8px 0px;
+         text-decoration: none;
+         text-align: center;
+         display:block;
+         font-size: 16px;
+         margin: 4px 8px;
+         cursor: pointer;
+         width:18rem;
+         }
+         #submit{
+             width:10rem;
+             background-color: green;
+             margin-left:4.5rem;
+         }
+         .guest-user{
+             margin-top: 3rem;
+         }
+         input:focus, textarea {
+           outline: none !important;
+         }
+         ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+          color: white;
+          opacity: 1; /* Firefox */
+         }
+
+         :-ms-input-placeholder { /* Internet Explorer 10-11 */
+         color: white;
+         }
+
+        ::-ms-input-placeholder { /* Microsoft Edge */
+        color: white;
+        }
+        @media only screen and (max-width: 400px){
+          #onebuckaid{
+            margin-left: 1rem;
+          }
+          
+          .heading1{
+            margin-left: initial;
+          }
+        }
+
+   

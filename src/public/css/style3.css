@@ -1,0 +1,136 @@
+#preloader{
+    background: white url('../images/onebuckaidlogo.png') no-repeat center center;
+    background-size: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    width:100%;
+    position: fixed;
+    z-index: 100;
+}
+#loading{
+    z-index: 105;
+}
+#loading_h2{
+   position: absolute;
+   bottom: 5vh;
+}
+#loading_footer{
+    position: absolute;
+    bottom: 0vh;
+}
+.navbar{
+    background-color: rgb(250, 170, 21);
+    width: 100vw;
+    
+}
+
+body{
+    margin: 0px 0px;
+    padding: 0px 0px;
+    background-color: white;
+    display: flex;
+    align-content:center;
+    flex-direction: column;
+    max-height:100vh;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+a { text-decoration: none; }
+#trending-box{
+    margin-top: 0.3rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height:auto;
+    margin-bottom: 0.2rem;
+    justify-content: left;
+}
+#other-box{
+    margin-top: 0.3rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height:auto;
+    margin-bottom: 0.2rem;
+    justify-content: left;
+}
+.card{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:14em;
+    width:11em;
+    margin:0.6em 0.8em;
+    box-shadow: 1px 1px 5px grey,-1px -1px 5px grey;
+    
+}
+.card-img-top{
+    height: 7em;
+    width: 100%;
+}
+.card-body{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width:100%;
+    padding:0em 0em;
+}
+.card-title{
+    font-size: 1em;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    height:auto;
+    margin-top: 0.3em;
+    
+}
+.btn-primary{
+    padding:0.2em 1em;
+    border:none;
+    margin-bottom: 0.5em;
+    /* position:relative; */
+    
+    
+}
+
+input:focus, textarea {
+    outline: none !important;
+  }
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+   color: white;
+   opacity: 1; /* Firefox */
+  }
+
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white;
+  }
+
+ ::-ms-input-placeholder { /* Microsoft Edge */
+ color: white;
+ }
+ @media screen and (min-width:202px) and (max-width: 606px) {
+     #trending-box,#other-box{
+         flex-direction: column;
+         flex-wrap: nowrap;
+         align-items: center;
+     }
+     .card{
+         flex-direction: row;
+         justify-content: space-evenly;
+         width: 95%;
+         height:fit-content;
+         margin: 0.3em 0em;
+     }
+     .card-img-top{
+         height: 3.5em;
+         width: 7em;
+     }
+     .card-body{
+         flex-direction: row;
+
+     }
+ }

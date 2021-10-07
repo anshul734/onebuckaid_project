@@ -1,0 +1,56 @@
+#preloader{
+    background: white url('../images/onebuckaidlogo.png') no-repeat center center;
+    background-size: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    width:100%;
+    position: fixed;
+    z-index: 100;
+}
+#loading{
+    z-index: 105;
+}
+#loading_h2{
+   position: absolute;
+   bottom: 5vh;
+}
+#loading_footer{
+    position: absolute;
+    bottom: 0vh;
+}
+.navbar{
+    background-color: rgb(250, 170, 21);
+    width: 100vw;
+    
+}
+body{
+    margin: 0px 0px;
+    padding: 0px 0px;
+    background-color: white;
+    display: flex;
+    align-content:center;
+    flex-direction: column;
+    height:100vh;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+#history-box{
+    display:flex;
+    height:100%;
+    align-items: center;
+    justify-content: center;
+}
+th, td {
+    border: 2px solid white;
+    border-collapse: collapse;
+    background-color: lightgoldenrodyellow;
+    padding:4px 4px 4px 4px;
+    text-align: center;
+  }
+  
+th{
+    background-color: rgb(250,170,21);
+}
