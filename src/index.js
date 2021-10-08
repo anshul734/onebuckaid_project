@@ -52,7 +52,7 @@ passport.deserializeUser(function (id, done) {
 passport.use(new FacebookStrategy({
     clientID: process.env.FB_CLIENT_ID,
     clientSecret: process.env.FB_CLIENT_SECRET,
-    callbackURL: "http://localhost:8000/auth/facebook/callback",//url where the facebook will redirect if successful authorisation
+    callbackURL: "https://onebuckaid.herokuapp.com/auth/facebook/callback",//url where the facebook will redirect if successful authorisation
     profileFields: ['id', 'displayName', 'photos', 'emails'] //fields we require
 },
     function (accessToken, refreshToken, profile, done) {
@@ -91,7 +91,7 @@ app.get("/auth/facebook/callback", passport.authenticate('facebook', {
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "http://localhost:8000/auth/google/callback"
+    callbackURL: "https://onebuckaid.herokuapp.com/auth/google/callback"
 },
     function (accessToken, refreshToken, profile, done) {
         donor.findOne({ userid: profile.id }, async (err, user) => {
