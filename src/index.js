@@ -278,6 +278,10 @@ app.get("/history",isAuthenticated,async(req,res)=>{
         code1:code
     })
 })
+//public privacy policy endpoint
+app.get("/publicprivacypolicy",(req,res)=>{
+    res.render('privacypolicy');
+})
 app.get("/logout", (req, res) => {
     req.logout();
     res.redirect("/loginpage");
