@@ -14,7 +14,6 @@ var database = require('./config/connect');//module contains uri and mongodb con
 var donor = require('./models/donor_model');//module contains donor schema and model
 var receiver = require('./models/receiver_model');//module contains recipient schema and model
 const flash = require('connect-flash');//package to send authentication messages
-var communitycount=0;//count for no of donations received
 let uri = database.uri;//mongo atlas uri
 database.connection;//establishes connection
 const port=process.env.PORT || 8000;
@@ -171,9 +170,20 @@ function isAuthenticated(req, res, done) {//A custom middleware to check if user
     if (req.user) return done();//if req.user exist authentication was completed
     else return res.redirect("/loginpage");
 }
+//A helper function to count no.of donations made
+async function totalusercounts(){
+    let result =await donor.find({},'usercount');
+    return result;
+}
 
 
-app.get("/", isAuthenticated, (req, res) => {
+app.get("/", isAuthenticated, async(req, res) => {
+    let communitycount=0;
+    await totalusercounts().then((users)=>{
+        for(let i=0;i<users.length;i++){
+            communitycount=communitycount+users[i].usercount;
+        }
+    })
     res.render('home', {
         style: "style2.css",
         image1: "onebuckaidlogo.png",
@@ -305,7 +315,6 @@ app.get('/61569f79a77178b9eb636a76',async(req,res)=>{
     res.end();
 })
 app.get('/6156a3516a8aea053d98673b',async(req,res)=>{
-   communitycount++;
     let d = new Date();
     d=d.toDateString();
     let obj={
@@ -321,7 +330,6 @@ app.get('/6156a3516a8aea053d98673b',async(req,res)=>{
     res.end();
 })
 app.get('/6156a4238df3163f1d515395',async(req,res)=>{
-    communitycount++;
     let d = new Date();
     d=d.toDateString();
     let obj={
@@ -337,7 +345,6 @@ app.get('/6156a4238df3163f1d515395',async(req,res)=>{
     res.end();
 })
 app.get('/6156a4ad6c61201d0ec834b8',async(req,res)=>{
-    communitycount++;
     let d = new Date();
     d=d.toDateString();
     let obj={
@@ -353,7 +360,6 @@ app.get('/6156a4ad6c61201d0ec834b8',async(req,res)=>{
     res.end();
 })
 app.get('/6156a61279fe077a1b19f68b',async(req,res)=>{
-    communitycount++;
     let d = new Date();
     d=d.toDateString();
     let obj={
@@ -369,7 +375,6 @@ app.get('/6156a61279fe077a1b19f68b',async(req,res)=>{
     res.end();
 })
 app.get('/6156a6788cd4de740c14b947',async(req,res)=>{
-    communitycount++;
     let d = new Date();
     d=d.toDateString();
     let obj={
@@ -385,7 +390,6 @@ app.get('/6156a6788cd4de740c14b947',async(req,res)=>{
     res.end();
 })
 app.get('/6156a6ef56b2f7db2bea1b92',async(req,res)=>{
-    communitycount++;
     let d = new Date();
     d=d.toDateString();
     let obj={
