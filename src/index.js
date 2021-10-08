@@ -191,6 +191,7 @@ app.get("/loginpage", (req, res) => {
     res.render('loginpage', {
         style: "style1.css",
         error:error,
+        image1:"onebuckaidlogo.png",
         image2:"loader.jpeg"
     });
 })
@@ -280,7 +281,7 @@ app.get("/history",isAuthenticated,async(req,res)=>{
 })
 //public privacy policy endpoint
 app.get("/publicprivacypolicy",(req,res)=>{
-    res.render('privacypolicy');
+    res.render('privacypolicy',{image1:"onebuckaidlogo.png"});
 })
 app.get("/logout", (req, res) => {
     req.logout();
