@@ -20,9 +20,10 @@ database.connection;//establishes connection
 const port=process.env.PORT || 8000;
 var app = express()
 const staticPath = path.join(__dirname, "public");//path to static folder
-
+const templatePath=path.join(__dirname,"views");
 app.use(cors());
 app.set('view engine', 'hbs');//for using hbs templates
+app.set('views',templatePath);
 app.use(session({
     secret: process.env.SES_KEY, 
     resave: false,//session store will not be modified if req.session object is not changed
