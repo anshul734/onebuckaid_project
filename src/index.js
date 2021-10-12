@@ -67,7 +67,8 @@ passport.use(new FacebookStrategy({
                     let obj = {};
                     obj.name = profile.displayName;
                     obj.userid = profile.id.toString();
-                    obj.email = profile.emails[0].value;
+                    if(profile.emails){
+                    obj.email = profile.emails[0].value;}
                     obj.photo = "https://graph.facebook.com/" + profile.id + "/picture" + "?width=200&height=200" + "&access_token=" + accessToken;
                     let user = new donor(obj);
                     let result = await user.save();
