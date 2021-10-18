@@ -300,7 +300,6 @@ app.get("/logout", (req, res) => {
 })
 //apis to handle if any donation is made.
 app.get('/61569f79a77178b9eb636a76',async(req,res)=>{
-    communitycount++;
     let d = new Date();
     d=d.toDateString();
     let obj={
